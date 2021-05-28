@@ -1,6 +1,6 @@
 # SIMPLE
 
-<div align="center"><img src="./logo.png"/></div>
+<div align="center"><img src="./SIMPLE-logo.png"/></div>
 
 **S**implified **I**nteractive **M**aterial for **P**leasant **L**earning **E**xperience (whoa, quite the name :), or SIMPLE for short is database of resources that, as the name suggests plans to make the very best of resources readily available and thus, make learning fun.
 
