@@ -24,19 +24,20 @@ You might be wondering there are plenty of YouTube videos available, why not wat
 - Keeping in mind the time constraints, only that material which is insightful has been added and hence you won't find this database as a wastage of your time.
 
 ### Our Team
-1. Aryan Gupta
-2. Advait Risbud
-3. Pulkit Paliwal
-4. Sarthak Jain
-5. Rehmat Singh Chawla
-6. Ammar Barbhaiwala
-7. Kartik Gokhale
-8. Avichal Jain
-9. Soham Joshi
-10. Chinmay Pimpalkhare
-11. Abhishek Mahajan
-12. Dhawal Singh
-13. Atharva
-14. Shashank Balaji
-15. Rounak Dalmia
-16. Jujhaar Singh
+1. Abhishek Mahajan
+2. [Advait Risbud](https://github.com/bolozubaankesari)
+3. Ammar Barbhaiwala
+4. [Aryan Gupta](https://github.com/chemistryanimation)
+5. [Atharva](https://github.com/Atharva0709)
+6. [Avichal Jain](https://github.com/AvichalJain)
+7. [Chinmay Pimpalkhare](https://github.com/ChinmayPimpalkhare)
+8. Dhawal Singh
+9. [Jujhaar Singh](https://github.com/jujhaar2409)
+10. [Kartik Gokhale](https://github.com/AWorldOfChaos)
+11. [Pulkit Paliwal](https://github.com/PulkitPaliwal)
+12. [Rehmat Singh Chawla](https://github.com/R-Bread)
+13. Rounak Dalmia
+14. Sarthak Jain
+15. [Shashank Balaji](https://github.com/shashankbalaji02)
+16. [Soham Joshi](https://github.com/jsoham)
+17. [Tirthankar Mazumder](https://github.com/wermos)
