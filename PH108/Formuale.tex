@@ -355,7 +355,7 @@ Where {\large $\va{\scriptr}=\va{r}-\va{r'}$} is the separation vector between t
 
 \item Electrostatic potential:
 \begin{equation}
-	V(\va{r})=\frac{1}{4\pi \epsilon_0}\int \frac{\rho(\va{r'})}{\abs{\va{r}-\va{r'}}}d\tau'
+	V(\va{r})=\frac{1}{4\pi \epsilon_0}\int \frac{\rho(\va{r'})}{\abs{\va{r}-\va{r'}}}d\tau'\label{43}
 \end{equation}
 Poisson's equation: 
 \begin{equation}
@@ -370,7 +370,10 @@ In regions of zero charge density we get Laplace's equation:
 
 \begin{tcolorbox}
 	\begin{itemize}
-		\item Gauss's Law: $$\oint \va{E}\cdot d\va{a}=\frac{Q_{en}}{\epsilon_0}$$
+		\item Gauss's Law: 
+		\begin{equation}
+			\oint \va{E}\cdot d\va{a}=\frac{Q_{en}}{\epsilon_0}
+		\end{equation}
 		
 		\item BCs for fields:
 		\begin{align}
@@ -505,8 +508,8 @@ Which derivative should be taken positive and which negative is best seen throug
     \end{align}
     \item Hyperbolic trig functions:
     \begin{enumerate}[label=\alph*]
-    \item  	$\sinh(x)=\dfrac{e^{kx}-e^{-kx}}{2}$
-    \item   $\cosh(x)=\dfrac{e^{kx}+e^{-kx}}{2}$
+    \item  	$\sinh(x)=\dfrac{e^{x}-e^{-x}}{2}$
+    \item   $\cosh(x)=\dfrac{e^{x}+e^{-x}}{2}$
     \end{enumerate}
 \end{enumerate}
 
@@ -589,7 +592,7 @@ Using the multipole expansion we can find the potential and by extension the fie
 \end{equation}
 Note: the integral is with respect to the primed co-ordinates and the $\theta$ is the angle between $\va{r}$ and $\va{r'}$ so it is also a varibale w.r.t the integral. \\
 
-The n=0 term is the potential due to the monopole a which basically considering a point charge equal to the total charge of the configuration placed at origin and it's potential calculated the normal way at $\va{r}$.
+The n=0 term is the potential due to the monopole a which basically considering a point charge equal to the total charge of the configuration placed at origin and it's potential calculated using Coulomb's law at $\va{r}$.
 \begin{equation}
 	V_{mon}(\va{r})=\dfrac{1}{4\pi \epsilon_0 r}\int\rho d\tau
 \end{equation}
@@ -613,18 +616,84 @@ and in co-ordinate independent form is
 \begin{equation}
 	E(\va{r})=\dfrac{1}{4\pi \epsilon_0 r^3}\Big[3(\va{p}\cdot\vu{r})\vu{r}-\va{p}\Big]
 \end{equation}
-\\
-\\
 
- \begin{center}
- 	***
- \end{center}
+\section{Magnetostatics}
+\subsection{Biot-Savart Law}
+For line currents:
 
+\begin{equation}
+	\boxed{
+	d\va{B}=\frac{\mu_0 I}{4\pi}\dfrac{\va{dl}\cross\vu{\scriptr}}{\scriptr^2}}
+\end{equation}
+In case of current per unit width $K(r')$ the law looks like:
+\begin{equation}
+	d\va{B}(\va{r'})=\frac{\mu_0}{4\pi}\dfrac{K(\va{r'})\cross\vu{\scriptr}}{\scriptr^2}da
+\end{equation}
+In case if 3-D currents:
+\begin{equation}
+	d\va{B}(\va{r})=\frac{\mu_0}{4\pi}\dfrac{\va{J}(\va{r'})\cross\vu{\scriptr}}{\scriptr^2}d\tau'
+\end{equation}
 
+The source of the electrostatic field is a charge $\rho d\tau$, similarly the source for the magnetic field is a current element $\va{J}d\tau$. For finite sources $\va{B}$ falls of as 1/$\scriptr^2$ and for infinite sources as $1/\scriptr$. This leads us to the result that 
+\begin{equation}
+      \boxed{\div{\va{B}}=0}
+\end{equation}
+This means that there are no magnetic monopoles/charges which leads us to the result that all magnetic field lines should close on themselves, so we arrive at the result that
+\begin{equation}
+\boxed{	\curl{\va{B}}=\mu_0 \va{J}(\va{r})}
+\end{equation}
+In all the above results $\va{r'}$ represents the location of magnetic sources. $\va{r}$ represents the location where field is to be calculated. $\scriptr$ represents $\abs{\va{r}-\va{r'}}$. In electrostatics, the chrages were at rest similarly in magnetostatics the current is steady. This gives us the continuity equation
+\begin{equation}
+	\boxed{\dv{\rho}{t}+\div{\va{J}}=0}
+\end{equation}
+This implies that charge cannot teleport from one place to another. It has to follow a continuous path between the two points. 
 
+\subsection{Magnetic Vector Potential}
+From Helmholtz's theorem we arrive at the fact that Magnetic fields should have a corresponding vector potential. The following identity holds between $\va{A}$ and $\va{B}$:
 
+\begin{equation}
+	\boxed{\va{B}(\va{r})=\curl{\va{A}(\va{r})}}
+\end{equation}
+hence,
 
+\begin{equation}
+	\va{B}=\curl{(\curl{\va{A}})}\label{99}
+\end{equation}
+Using the gauge tranformation we can get a simplified form of \eqref{99} by making the assumption that $\div{A}=0$,
+\begin{equation*}
+	\laplacian{\va{A}}=-\mu_0\va{J}(\va{r})
+\end{equation*}
+which is the vector form of Laplace's equation the solution of which we already know to be of the form
+\eqref{43}. Only difference is that we replace $\epsilon_0$ by $\tfrac{1}{\mu_0}$ and $\rho$ by $\va{J}$. Note that it is a vector integral so one must integrate component wise. 
 
+\subsection{Boundary Conditions}
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!50!black]
+	\begin{itemize}
+	\item Magnetic Field BCs:	\begin{align}
+			\div{B}(\va{r})&=0 \\
+			\curl{B}(\va{r})&=\mu_0 \va{J}(r)
+		\end{align}
+		If we consider a general 2-D boundary, the following conditions apply
+		\begin{align}
+			B_{above}^{\perp}&=B_{below}^{\perp} \\
+			B_{above}^{\parallel}-B_{below}^{\parallel}&=\mu_0 K \\
+			\va{B}_{above}-\va{B}_{below}&=\mu_0 \va{K}\cross \vu{n}
+		\end{align}
+	
+	\item Potential BCs:
+	If we invoke the gauge tranformation and get a divergence less vector potential then the following conditions hold
+	\begin{equation}
+			\va{A}_{above}=\va{A}_{below}  
+	\end{equation}
+the derivative however is not continuous,
+	\begin{equation}
+		\pdv{\va{A}_{above}}{\textbf{n}}-\pdv{\va{A}_{below}}{\textbf{n}}=-\mu_0 \va{K}
+	\end{equation}
+        
+    
+	
+	\end{itemize}
+\end{tcolorbox}
 
 
 
