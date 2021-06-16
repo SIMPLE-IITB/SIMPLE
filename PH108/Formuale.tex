@@ -217,12 +217,12 @@ Cartesian:\\
 Spherical:\\
 \begin{figure}[h]
 	\centering
-	\includegraphics{../operators_spherical.png}
+	\includegraphics{./img/operators_spherical.png}
 \end{figure}\\
 Cylindrical:\\
 \begin{figure}[h]
 	\centering
-	\includegraphics{../operators_cyl.png}
+	\includegraphics{./img/operators_cyl.png}
 \end{figure}
 
 
@@ -480,7 +480,7 @@ The domain definition means that the conductors are not a part of the domain and
 	 
 \end{itemize}
 
-\subsection{Separations of Variables(Cartesian)}
+\subsection{Separations of Variables(Cartesian)}\label{cart SoV}
  The laplacian in cartesian co-ordinates is
 \begin{equation}
 	\pdv[2]{V}{x}+\pdv[2]{V}{y}+\pdv[2]{V}{z}=0 \label{eq:a}
@@ -530,7 +530,7 @@ From the orthogonality of the sine function we have
 \end{equation}
 So basically if we want the $n^{th}$ coefficient of the sine series then we should just multiply by the $n^{th}$ sine function to both sides and integrate within the limits of the variable. Here I have taken the boundaries to be at 0 and $a$ because that is the principal range for $\cos(\frac{n\pi y}{a})$(the choice of $V(y)$ and sine functions is all inspired by the topic at hand).
 
-\subsection{Separation of Variables(Spherical Polar)}
+\subsection{Separation of Variables(Spherical Polar)}\label{polar SoV}
 The laplacian in spherical co-ordinates is:
 \begin{equation}
 	\frac{1}{r^2} \pdv{r}(r^2 \pdv{V}{r}) + \dfrac{1}{r^2 \sin(\theta)} \pdv{\theta}\Big(\sin\theta \pdv{V}{\theta}\Big) + \dfrac{1}{r^2 \sin[2](\theta)}\pdv[2]{V}{\phi} =0
@@ -580,7 +580,7 @@ Note that when integrating with respect to $\theta$ you must multiply by $\sin\t
 \end{equation}
 In problems where surface charge density is asked at a bounding surface, the following result proves useful:
 \begin{equation}
-	 \pdv{V_{out}}{\textbf{n}}-\pdv{V_{in}}{\textbf{n}}\Bigg|_{boundary}=-\dfrac{\sigma}{\epsilon_0}
+	 \pdv{V_{out}}{\textbf{n}}-\pdv{V_{in}}{\textbf{n}}\Bigg|_{boundary}=-\dfrac{\sigma}{\epsilon_0}\label{85}
 \end{equation}
 In the above equation $V_{in}$ and $V_{out}$ are the functions in form of series expansions or otherwise for the potential inside and outside a boundary.
 
@@ -689,8 +689,6 @@ the derivative however is not continuous,
 	\begin{equation}
 		\pdv{\va{A}_{above}}{\textbf{n}}-\pdv{\va{A}_{below}}{\textbf{n}}=-\mu_0 \va{K}
 	\end{equation}
-        
-    
 	
 	\end{itemize}
 \end{tcolorbox}
