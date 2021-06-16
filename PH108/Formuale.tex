@@ -697,4 +697,53 @@ the derivative however is not continuous,
 
 \input{electrodynamics.tex}
 
+\section{EM Waves}
+The solutions to the 3 dimensional EM-wave equation are
+\begin{align}
+	\va{E}(r,t)&=\va{E_0}\cos(\va{k}\cdot\va{r}-\omega t) \\
+	\va{B}(r,t)&=\va{B_0}\cos(\va{k}\cdot\va{r}-\omega t)
+\end{align}
+Here $\va{k}$ is called the \textit{wave vector} and represents the direction of propagation and its magnitude denotes the wave number of the wave. 
+\begin{equation}
+	\abs{\va{k}}=\frac{2\pi}{\lambda}
+\end{equation}
+By imposing $\div{\va{E}}=0$ \& $\div{\va{B}}=0$ we get that $\va{E}\ \& \va{B} \perp \va{k}$. This means that the undulations of the electric and magnetic field are perpendicular to the direction of propagation of the wave. In a vacuum, $E\ \& B$ are in phase. 
+\begin{equation}
+	\va{B_0}=\tfrac{1}{c}(\vu{k}\cross\va{E_0})\label{rcs}
+\end{equation}
+Here $\va{E}$, $\va{B}$ and $\va{k}$ form a right handed co-ordinate system. 
+\subsection{Energy in EM Waves}
+The energy density of the electric and magnetic fields is equal due to \eqref{rcs}, which means that half the energy of an EM wave is carried by $E$ and half by $B$. The energy density of an electromagnetic field is given by
+\begin{equation}
+	\boxed{u_{EM}=u_E+u_B}
+\end{equation}
+\begin{tcolorbox}[title=Poynting's Theorem,colback=yellow!5!white,colframe=yellow!50!black]
+	\textbf{The rate of energy transfer (per unit volume) from a region of space equals the rate of work done on a charge distribution plus the energy flux leaving that region.}
+	\begin{equation}
+		-\dv{t}\Big(\int u_{EM}d\tau\Big)=\int_V (\va{J}\cdot\va{E})d\tau+\oint\va{S}\cdot d\va{a}\label{poynting}
+	\end{equation}
+Here $u_{EM}$ is the energy density of the electromagnetic field and $U=\int ud\tau$. $\va{S}$ is the Poynting vector. \eqref{poynting} can be written in differential form as.
+\begin{equation}
+	-\dv{t}(u_{EM})=\va{J}\cdot\va{E}+\div{\va{S}}
+\end{equation}
+\end{tcolorbox}
+
+Poynting Vector is given by:
+\begin{equation}
+	\boxed{\va{S}=\frac{1}{\mu_0}(\va{E}\cross\va{B})}
+\end{equation}
+Its magnitude represents the intensity(energy per unit cross-sectional area per unit time) of the wave and its direction is the direction of propagation of the wave. 
+\begin{equation}
+	\va{S}=\frac{1}{c\mu_0}E_0^2\cos[2](\va{k}\cdot\va{r}-\omega t)\vu{k}
+\end{equation}
+Frequencies for EM waves are generally very large so we cannot measure quantities for a specific time. Instead we consider the time averaged quantities, so the time averaged Poynting vector is,
+\begin{equation}
+	\langle\va{S}\rangle=\Bigg(\dfrac{E_0^2}{2c\mu_0}\Bigg)\vu{k}
+\end{equation}
+
+
+
+
+
+
 \end{document}
