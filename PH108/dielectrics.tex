@@ -1,0 +1,61 @@
+\section{Dielectrics}
+\subsection{Electric Fields in Matter}
+Matter, which essentially comprises atoms, contains charges in the forms of electrons and protons. These react to an external electric field and internally displace inside the material to produce an opposing dipole moment. This is polarisation. \\
+Polarization is the net dipole moment per unit volume. It is a vector in 3-D space. So is the electric field. The quantity connecting the electric field to the polarization is a second-rank tensor called the polarizability tensor and is a property of the object.
+\begin{equation}
+	\begin{bmatrix}
+		p_x\\
+		p_y\\
+		p_z 
+	\end{bmatrix}
+	= \alpha
+	\begin{bmatrix}
+		E_x\\
+		E_y\\
+		E_z
+	\end{bmatrix}
+\end{equation}
+\subsection{Formulation}
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!50!black]
+	\begin{itemize}
+		\item Atomic Polarizability: \\
+		Electron cloud of an atom responds to an external electric field
+		\begin{equation}
+			\va{p} = (3\epsilon_0\cdot V)\va{E}_{ext}
+		\end{equation}
+		where atomic polarizability($\alpha$) = $3\epsilon_0$.
+		\item Bound Charges:
+		\begin{align}
+			\rho_b &= -\nabla\cdot\va{P} \\
+			\sigma_b &= \va{P}\cdot\hat{n}
+		\end{align}
+		
+		\item Displacement Vector:
+		\begin{align}
+			\va{D} &= \epsilon_0\va{E}+\va{P} \\
+			\rho_f &= \nabla\cdot\va{D}
+		\end{align}
+		\item Boundary Conditions:
+		\begin{align}
+			D_{above}^{\perp} - D_{below}^{\perp} &= \sigma_f\\
+			D_{above}^{\parallel}-D_{below}^{\parallel}&=	P_{above}^{\parallel}-P_{below}^{\parallel}
+		\end{align}
+		\item Linear Dielectric
+		\begin{align}
+			\va{P} &= \epsilon_0\chi\vec{E} \\
+			\va{D} &= \epsilon_0(1+\chi)\vec{E} = \epsilon\va{E} \\
+		\end{align}
+		\item Energy in a Dielectric:
+		\begin{equation}
+			W = \frac{1}{2}\iiint \va{D}\cdot\va{E}d\tau
+		\end{equation}
+	\end{itemize}
+\end{tcolorbox}
+
+\subsection{Gauss's law in dielectrics}
+\begin{equation}
+	\div{\va{D}}=\rho_f
+\end{equation}
+The free charge here is the one we control, if some charge is present initially then that is the free charge. This free charge polarises the material. However, we cannot conclude a couloumb's law for the displacement vector. We can safely take $\va{D}=\tfrac{1}{4\pi}\int \rho_f/\abs{\va{r}-\va{r'}}d\tau$ when \textbf{some symmetry is present}(such that  $\curl{\va{D}}=0$). \\
+
+Separation of variable is also done in matter, here we have to consider $\rho_b$ and $\sigma_b$(for using \eqref{85}) here. The maths is the same as in \ref{cart SoV} and \ref{polar SoV}.

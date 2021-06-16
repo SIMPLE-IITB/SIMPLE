@@ -1,0 +1,137 @@
+
+\section{Electrodynamics and Maxwell's Laws}
+\subsection{Ohm's Law}
+When a constant electric field is applied, the charges in a conductor start moving. One would expect that the velocity and thus the current should grow with time, since the electric field is accelerating the charge carriers. But in reality, we see that the current density is proportional to the electric field applied. This is because the charge carriers collide with each other. Thus their average velocity is a constant and proportional to the applied electric field. This gives rise to Ohm's Law. 
+\begin{gather}
+	\vec{J} = \sigma (\vec{E} + \vec{v} \cross \vec{B}) 
+\end{gather}
+The velocity of the charge carriers is often small and thus we ignore the second term.
+\begin{gather}
+	\vec{J} = \sigma \vec{E}
+\end{gather}
+An alternate, and more familiar, form of this equation is given in \eqref{eq:ohm1}
+\begin{equation}
+	V = IR
+	\label{eq:ohm1}
+\end{equation}
+For steady currents and uniform conductivity,
+\begin{equation}
+		\div \vec E = \frac{1}{\sigma} \div \vec J = 0
+\end{equation}
+This means that any unbalanced charge resides on the surface. Hence we can apply the methods we learnt earlier in this case as well.
+
+The conductance can be given using Drude's model, where n is the number of molecules per unit volume, f is the number of free electrons per molecule and q is the charge of an electron.
+\begin{equation}
+	\sigma = \frac{nfq^2\tau}{2m} E
+\end{equation}
+
+
+Since the work done per unit charge is $V$ and the charge flowing per unit time is $I$, we can write the power as given in eqref{eq:joule}. This is called Joule Heating Law.
+\begin{equation}
+	P=VI = I^2R
+	\label{eq:joule}
+\end{equation} 
+
+\subsection{Electro-magnetic Induction}
+
+\subsubsection{Electromotive Force}
+In a circuit, the power source applies a force inside it, which is responsible for the potential difference across the circuit. This is also responsible for what we call EMF($\epsilon$). We can represent this using the following equations.
+\begin{gather}
+	\vec f = \vec f_{source} + E\\
+	\epsilon = \oint \vec f \cdot d\vec l = \oint \vec f_{source} \cdot d\vec l 
+\end{gather}
+Taking $a$ and $b$ to be the terminals of the power source, we can further write the following expression,
+\begin{gather}
+	\epsilon = V = \int_{a}^{b} \vec E \cdot d\vec l = \int_{a}^{b} \vec f_{source} \cdot d\vec l = \oint \vec f_{source} \cdot d\vec l
+\end{gather}
+
+\subsubsection{Induction}
+We define magnetic flux as,
+\begin{equation}
+	\phi \equiv \int \vec B \cdot d \vec a
+\end{equation}
+A change in the magnetic flux gives rise to an induced electric field. This electric field generates an EMF, which in turn causes flow of current. The following equations govern this.
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!50!black]
+	\begin{itemize}
+	    \item The Flux Rule: \\
+	     This is the master equation in a sense, relating magnetic flux to induced EMF
+	    \begin{gather}
+		\epsilon = - \dv{\phi}{t} 
+	\end{gather}
+	    \item Faraday's Law: Differential form
+	    \begin{align}
+		\curl \vec E = - \pdv{B}{t}
+		\label{eq:farad}
+	    \end{align}
+	    
+	    \item Faraday's Law: Integral form
+	    \begin{align}
+	        \oint \vec E \cdot d \vec l = - \int \pdv{B}{t} \cdot d \vec a 
+	    \end{align}
+	\end{itemize}
+\end{tcolorbox}
+
+\subsubsection{Induced Electric Field}
+If you look closely at the equation \eqref{eq:farad} along with the property of the induced electric field that $\div \vec E = 0$, we can find parallels with the equations we have for magnetic field. Thus, we say that the change in flux serves as a source for the induced electric field the way that $\vec J$ is a source for the magnetic field.
+
+\subsubsection{Lenz's Law}
+This law is used to find the direction of induced current. It says that the magnetic flux through an object has a "tendency" to remain constant. Thus the induced current is such that the induced magnetic field opposes the change in flux.
+
+\subsubsection{Mutual Inductance}
+Say we place to circuits side by side and let current flow in them. Clearly they will generate magnetic fields and this magnetic field must produce some flux in the circuits. This gives rise to mutual inductance($M$), which is defined as
+\begin{gather}
+	\phi_2 = M_{21} I_1\\ 
+	\phi_1 = M_{12} I_2
+\end{gather}
+But $M_{21} = M_{12}$, thus we can remove the subscripts. This mutual flux also produces induced EMF if $I_1$ or $I_2$ are 
+
+\subsubsection{Self Inductance}
+The current in the circuit itself too gives a rise to a magnetic field and that field casuses a flux inside the loop of the circuit as well. Now we define self inductance($L$) as
+\begin{equation}
+	\phi = LI	
+\end{equation}
+
+\subsection{Energy stored in Magnetic Field}
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!50!black]
+	\begin{itemize}
+	    \item In terms of inductance and current:  
+	    \begin{gather}
+		W = \frac{1}{2}L I^2
+	\end{gather}
+
+	    \item In terms of magnetic field:
+	    \begin{align}
+		W &= \frac{1}{2\mu_0}\left[ \int_{V} B^2 d\tau - \oint_{S} \div (\vec A \cross \vec B) d \tau \right] \\
+		&= \frac{1}{2\mu_0}\left[ \int_{V} B^2 d\tau - \oint_{S} (\vec A \cross \vec B) \cdot d \vec a \right]\\
+		&= \frac{1}{2\mu_0} \int_{all\ space} B^2 d\tau 
+	    \end{align}
+	\end{itemize}
+\end{tcolorbox}
+
+\subsection{Maxwell's Equations}
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!50!black]
+	\begin{gather}
+		\div \vec E = \frac{1}{\epsilon_0} \rho \\
+		\div \vec B = 0 \\
+		\curl \vec E = - \pdv{\vec B}{t} \\
+		\curl \vec B = \mu_0 \vec J + \mu_0 \epsilon_0 \pdv{\vec E}{t}
+	\end{gather}
+\end{tcolorbox}
+
+\subsubsection{Displacement current}
+The displacement current density is given by the following equation,
+\begin{equation}
+	\vec J_d = \epsilon_0 \pdv{\vec E}{t}
+\end{equation}
+
+\subsubsection{Maxwell's Equations in free space}
+In free space, we can reduce Maxwell's Equations to,
+\begin{gather}
+	\laplacian \vec E = \mu_0 \epsilon_0 \pdv[2]{\vec E}{t}\\
+	\laplacian \vec B = \mu_0 \epsilon_0 \pdv[2]{\vec B}{t}\\
+\end{gather}
+
+The solutions of these equations are of the form $f(x-ct)$ where,
+\begin{equation}
+	c = \frac{1}{\sqrt{\mu_0\epsilon_0}}
+\end{equation}
