@@ -1,0 +1,113 @@
+
+%—————————————————————————————Standardized Imports——————————————————————————————
+\RequirePackage[utf8]{inputenc}
+
+%----------------------------Packages for math stuff----------------------------
+\RequirePackage{mathtools, amssymb} % For writing math equations and symbols
+\RequirePackage{amsthm} % For the proof environment
+\RequirePackage{physics} % For vectors and grad, curl, etc.
+%-------------------------------------------------------------------------------
+
+\RequirePackage{geometry} % For defining page margins
+
+\RequirePackage{classicthesis} % Amazing beauty *chef's kiss*
+
+\RequirePackage[framemethod=tikz]{mdframed} % Theorem boxes
+
+%------------------------Packages for Images and Diagrams-----------------------
+\RequirePackage{tikz} % Diagrams
+\RequirePackage{graphicx} % Images
+%-------------------------------------------------------------------------------
+
+\RequirePackage{calligra} %For the font
+
+\RequirePackage[inline]{enumitem} %For customizable numbered lists
+
+\RequirePackage{hyperref} % For hyperlinks
+%———————————————————————————————————————————————————————————————————————————————
+
+%—————————————————————————————Setting Up Hyperlinks—————————————————————————————
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+}
+%———————————————————————————————————————————————————————————————————————————————
+
+%——————————————————————————Setting Up The Page Margins——————————————————————————
+\geometry{
+	bottom=2cm,
+}
+%———————————————————————————————————————————————————————————————————————————————
+
+%————————————————Defining the Theorem and Definition environments———————————————
+\newcounter{theorem}[chapter]
+\newcounter{definition}[chapter]
+
+\newenvironment{theorem}[1][]{
+	\stepcounter{theorem}
+	\ifstrempty{#1}{
+		\begin{mdframed}[linecolor=blue, backgroundcolor=blue!10, roundcorner=5pt, linewidth=1pt, frametitle={Theorem~\thechapter.\thetheorem.}, frametitlerule=true, frametitleaboveskip=10pt, frametitlebelowskip=5pt, frametitlebackgroundcolor=blue!40]
+		}
+		{
+			\begin{mdframed}[linecolor=blue, backgroundcolor=blue!10, roundcorner=5pt, linewidth=1pt, frametitle={Theorem~\thechapter.\thetheorem.~(#1)}, frametitlerule=true, frametitleaboveskip=10pt, frametitlebackgroundcolor=blue!40]
+		}
+}{\end{mdframed}}
+
+\newenvironment{proposition}[1][]{
+	\stepcounter{theorem}
+	\ifstrempty{#1}{
+		\begin{mdframed}[linewidth=1pt, linecolor=blue!10, backgroundcolor=blue!10]
+			\bfseries Proposition~\thechapter.\thetheorem.\normalfont 
+	}
+	{
+		\begin{mdframed}[linewidth=1pt, linecolor=blue!10, backgroundcolor=blue!10]
+			\bfseries Proposition~\thechapter.\thetheorem~(#1).\normalfont
+	}
+}{\end{mdframed}}
+
+\newenvironment{definition}[1][]{
+	\stepcounter{definition}
+	\ifstrempty{#1}{
+		\begin{mdframed}[linewidth=1pt, linecolor=gray!15, backgroundcolor=gray!15,]
+			\bfseries Definition~\thechapter.\thedefinition.\normalfont
+	}
+	{
+		\begin{mdframed}[linewidth=1pt, linecolor=gray!15, backgroundcolor=gray!15,]
+			\bfseries Definition~\thechapter.\thedefinition~(#1).\normalfont
+	}
+}{\end{mdframed}}
+
+\newenvironment{lemma}[1][]{
+	\stepcounter{theorem}
+	\ifstrempty{#1}{
+		\begin{mdframed}[linewidth=1pt, linecolor=yellow!30, backgroundcolor=yellow!30,]
+			\bfseries Lemma~\thechapter.\thetheorem.\normalfont
+	}
+	{
+		\begin{mdframed}[linewidth=1pt, linecolor=yellow!30, backgroundcolor=yellow!30,]
+			\bfseries Lemma~\thechapter.\thetheorem~(#1).\normalfont
+	}
+}{\end{mdframed}}
+%———————————————————————————————————————————————————————————————————————————————
+
+%——————————————Definitions of short commands to promote less typing—————————————
+\newcommand{\R}{\mathbb{R}} %The reals
+\newcommand{\Q}{\mathbb{Q}} %The rationals
+\newcommand{\Z}{\mathbb{Z}} %The integers
+\newcommand{\N}{\mathbb{N}} %The natural numbers
+\newcommand{\F}{\mathbb{F}} %Any arbitrary field
+
+\renewcommand{\L}{\mathcal{L}} %For the Laplace Transform
+
+\newcommand{\ang}[1]{\langle #1 \rangle}
+
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}} %pd is short for ``partial derivative".
+%———————————————————————————————————————————————————————————————————————————————
+
+%———————————————————————————————Declaring our font——————————————————————————————
+\DeclareFontShape{T1}{calligra}{m}{n}{<->s*[2.2]callig15}{}
+\DeclareMathAlphabet{\mathcalligra}{T1}{calligra}{m}{n}
+%———————————————————————————————————————————————————————————————————————————————
+
+\setlength{\parindent}{0pt} % To prevent unnecessary indentation
+
