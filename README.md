@@ -20,7 +20,7 @@ We also envision *SIMPLE* to be a platform where you can get some exposure to co
 You might be wondering there are plenty of YouTube videos available, why not watch on of them instead of going through the pain of accessing *SIMPLE* and searching for relevant material. But alas, *SIMPLE* gives you more than that.
 
 - The compilation of the resources and their organization has been done in a systematic manner.
-- The resources created are all stored at a single place (which place?) and only the relevant material has been added.
+- The resources created are all stored at a [single place](https://www.notion.so/SIMPLE-a69bfade632a47a49a64491aa0e3d61b) and only the relevant material has been added.
 - Keeping in mind the time constraints, only that material which is insightful has been added and hence you won't find this database as a wastage of your time.
 
 ### Our Team
