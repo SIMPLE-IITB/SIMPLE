@@ -584,6 +584,23 @@ Note that when integrating with respect to $\theta$ you must multiply by $\sin\t
 \begin{equation}
 	V(r,\theta)=\sum_{l=0}^{\infty}\Big(A_lr^l+\dfrac{B_l}{r^{l+1}}\Big)P_l(\cos\theta)
 \end{equation}
+
+\section{Separation of variables in cylindrical co-ordinates}
+The laplacian in cylindrical co-ordinates is
+\begin{equation}
+	\laplacian{V}=\frac{1}{s}\dv{s}\Big(s\dv{V}{s}\Big)+\frac{1}{\phi^2}\dv[2]{V}{s}+\dv[2]{V}{z}
+\end{equation}
+Assuming symmetry along the z-axis and separating V($s$,$\phi$) as $S(s)\Phi(\phi)$ we get
+
+\begin{equation}
+	\laplacian{V}=\frac{s}{S}\dv{s}\Big(s\dv{S}{s}\Big)+\frac{1}{\Phi}\dv[2]{\Phi}{\phi}
+\end{equation}
+Solving the above equation in the case of cylindrical symmetry gives us the following solution
+\begin{equation}
+    V(s,\phi)=a_0+b_0\ln(s)+\sum_{k=1}^{\infty}s^k(a_kcos(k\phi)+b_ksin(k\phi))+s^{-k}(c_k\cos(k\phi)+d_k\sin(k\phi))
+\end{equation}\\
+
+
 In problems where surface charge density is asked at a bounding surface, the following result proves useful:
 \begin{equation}
 	 \pdv{V_{out}}{\textbf{n}}-\pdv{V_{in}}{\textbf{n}}\Bigg|_{boundary}=-\dfrac{\sigma}{\epsilon_0}
