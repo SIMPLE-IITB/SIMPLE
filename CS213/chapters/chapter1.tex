@@ -18,7 +18,7 @@
 
 	Pseudo Code is more structured than usual prose but less formal than a programming language.
 
-	Following is the Pseudo Code terminology that I would be using 
+	Following is the Pseudo Code terminology that would be used 
 	\begin{itemize}
 		\item Standard mathematical symbols to describe numeric and boolean expressions.
 		\item Using $\gets$ for assignment and $=$ for equality relationship
@@ -91,3 +91,20 @@
 		Let $f$ and $g$ be two well defined functions. Then we write $f(n) = \Theta(g(n))$ if there exist constants $c_1$, $c_2$ and $n_0$ such that $c_1g(n)\le f(n)\le c_2g(n)$ for all $n\ge n_0$.
 	\end{definition}
 	From the above definitions it is now obvious that $f(n) = \Theta(g(n))$ if and only if $f(n) = O(g(n))$ and $f(n) = \Omega(g(n))$.
+
+	\begin{definition}[Little-Oh Notation]
+		Let $f$ and $g$ be well defined functions taking non-negative real values. Then, we write $f(n) = o(g(n))$ if for every $\epsilon>0$, there exists $n_0$ such that $f(n)\le\epsilon g(n)$ for all $n\ge n_0$.
+	\end{definition}
+	
+	\begin{definition}[Little-Omega Notation]
+		Let $f$ and $g$ be two well defined functions taking non-negative real values. Then, we write $f(n) = \omega(g(n))$ if for every $\epsilon>0$, there exists $n_0$ such that $f(n)\ge\epsilon g(n)$ for all $n\ge n_0$.
+	\end{definition}
+
+	Frequently the following terminology shall be used to refer to the time-complexities of algorithms.
+	\begin{description}
+		\item[Logarithmic:] $O(\log n)$
+		\item[Linear:] $O(n)$
+		\item[Quadratic:] $O(n^2)$
+		\item[Polynomial:] $O(n^k)$ where $k\in\Z$.
+		\item[Exponential:] $O(a^n)$ where $a\in\R^+$ 
+	\end{description}
