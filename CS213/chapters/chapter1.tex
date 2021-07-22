@@ -1,0 +1,100 @@
+\begin{description}
+		\item[Algorithm:] Outline, the essence of a computational procedure, step-by-step instructions.
+		\item[Program:] An implementation of an algorithm in some programming language.
+		\item[Data Structure:] Organization of data needed to solve the problem.  
+	\end{description}
+	An \textbf{Algorithmic Problem} has a specification of an input and a given specification of an output.
+	The Algorithm would describe actions on the input instance to get the desired output instance.\\
+
+	A \textbf{Good Algorithm} is characterized by its Efficiency which depends on
+	\begin{itemize}
+		\item Running Time
+		\item Space Used
+	\end{itemize}
+	In this course we shall attempt to use a high level description of the altorithm and take into account all possible inputs for the same. This would allow one toe evaluate the efficiency of any algorithm in a way that is independant of the hardware and the software environment.\\
+
+	\section{Pseudo Code}
+	A mixture of natural language and high-level programing concepts that describes the main ideas behind a generic implementation of a data structure of algorithm is called a \textbf{Pseudo Code}.\\
+
+	Pseudo Code is more structured than usual prose but less formal than a programming language.
+
+	Following is the Pseudo Code terminology that I would be using 
+	\begin{itemize}
+		\item Standard mathematical symbols to describe numeric and boolean expressions.
+		\item Using $\gets$ for assignment and $=$ for equality relationship
+		\item Programming Constructs like the following
+		\begin{itemize}
+			\item decision structures: \textbf{if ... then ... [else ...]}
+			\item while-loops: \textbf{while ... do}
+			\item repeat-loops: \textbf{repeat ... until ...}
+			\item for-loop: \textbf{for ... do}
+			\item array indexing: \textbf{A[i], A[i,j]}
+		\end{itemize}
+		\item Methods like
+		\begin{itemize}
+			\item calls: object method(args)
+			\item returns: \textbf{return} value
+		\end{itemize}
+	\end{itemize}
+
+	\section{Analysis of Algorithms}
+	\textbf{Primitive Operation:} Low-level operation independant of programming language. Can be identified in Pseudo-Code. For example
+	\begin{itemize}
+		\item Data Movement (assignment)
+		\item Control (branch, subroutine call, return)
+		\item arithmetic and logical operations (addition, comparison)
+	\end{itemize}
+	\section{Insertion Sort}
+	\begin{algorithm}[H]
+		\label{alg:1}
+		\KwIn{$A[1...n]$ is an array of integers}
+		\KwOut{a permutation of $A$ such that $A[1]\le A[2]\le\cdots\le A[n]$}
+		\For{$j\gets2$ \textbf{to} $n$}{
+			$key\gets A[j]$\;
+			$i \gets j-1$\;
+			\While{$i>0$ \and $A[i] >key$}{
+				$A[i+1]\gets A[i]$\;
+				$i\gets i-1$\;
+			}
+			$A[i+1] \gets key$\;
+		}
+	\end{algorithm}
+	\subsection{Analysis of the Algorithm}
+	Say that the cost of the $i$-th line is $c_i$. Further say that for each $j$ in $2,3,\cdots,n$; one enters the while loop $t_j$ times. Then, the total cost of the algorithm would be 
+	\begin{equation*}
+		T(n) = c_1n + c_2(n-1) + c_3(n-1) + c_4\sum_{j=2}^nt_j + c_5\sum_{j=2}^n(t_j-1) + c_6\sum_{j=2}^n(t_j-1) + c_8(n-1)
+	\end{equation*}
+	Simplification of the above equation gives us
+	\begin{equation*}
+		T(n) = (c_1+c_2+c_3-c_5-c_6+c_8)n + (c_4+c_5+c_6)\sum_{j=2}^nt_j - (c_2+c_3-c_5-c_6+c_8)
+	\end{equation*}
+
+	There are now the following possible cases
+	\begin{description}
+		\item[Best Case:] $t_j = 1$ for all permissible $j$. In this case, $T(n)$ is a linear function of $n$.
+		\item[Worst Case:] $t_ = j$ for all permissible $j$. In this case, $T(n)$ is a quadratic function of $n$.
+		\item[Average Case:] $t_j = \frac{j}{2}$ for all permissible $j$. In this case, $T(n)$ is a quadratic function of $n$.
+	\end{description}
+	
+	\section{Asymptotic Analysis}
+	This is used when we would like to get rid of the details of execution which may be hardware dependant and would just like to capture the essence of how the running time of the algorithm increases with the increase in input size.
+	\subsection{Asymptotic Notation}
+	\begin{definition}[Big-Oh Notation]
+		Let $f$ and $g$ be two well defined functions. Then we write $f(n) = O(g(n))$ if there exist constants $c$ and $n_0$ such that $f(n)\le cg(n)$ for all $n\ge n_0$.
+	\end{definition}
+	It must be noted that there is no \textit{unique} Big-Oh of a function. In the sense that $f(n) = 6n + 9$ is both $O(n)$ and $O(n^2)$.
+
+	\begin{definition}[Big-Omega Notation]
+		Let $f$ and $g$ be two well defined functions. Then, we write $f(n) = \Omega(g(n))$ if there exist constants $c$ and $n_0$ such that $f(n)\ge cg(n)$ for all $n\ge n_0$.
+	\end{definition}
+	\begin{definition}[Big-Theta Notation]
+		Let $f$ and $g$ be two well defined functions. Then we write $f(n) = \Theta(g(n))$ if there exist constants $c_1$, $c_2$ and $n_0$ such that $c_1g(n)\le f(n)\le c_2g(n)$ for all $n\ge n_0$.
+	\end{definition}
+	From the above definitions it is now obvious that $f(n) = \Theta(g(n))$ if and only if $f(n) = O(g(n))$ and $f(n) = \Omega(g(n))$.
+
+	\begin{definition}[Small-Oh Notation]
+		Let $f$ and $g$ be two well defined functions. Then we write $f(n) = \mathcal{O}(g(n))$ if there exist constants $c$ and $n_0$ such that $f(n)\le cg(n)$ for all $n\ge n_0$.
+	\end{definition}
+	\begin{definition}[Small-Omega Notation]
+		Let $f$ and $g$ be two well defined functions. Then, we write $f(n) = \Omega(g(n))$ if there exist constants $c$ and $n_0$ such that $f(n)\ge cg(n)$ for all $n\ge n_0$.
+	\end{definition}
