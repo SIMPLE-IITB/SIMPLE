@@ -121,6 +121,10 @@
 	}
 }{\end{mdframed}}
 %———————————————————————————————————————————————————————————————————————————————
+%               Code Snippet Environments
+\newenvironment{java}{\begin{lstlisting}[language=Java]}{\end{lstlisting}}
+\newenvironment{cpp}{\begin{lstlisting}[language=C++]}{\end{lstlisting}}
+\newenvironment{python}{\begin{lstlisting}[language=Python]}{\end{lstlisting}}
 
 %——————————————Definitions of short commands to promote less typing—————————————
 \newcommand{\R}{\mathbb{R}} %The reals
@@ -136,6 +140,10 @@
 \newcommand{\ang}[1]{\langle #1 \rangle}
 
 \newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}} %pd is short for ``partial derivative".
+
+\newcommand{\Java}[1]{\lstinline[language=Java]{#1}} %For Java keywords
+\newcommand{\CPP}[1]{\lstinline[language=C++]{#1}} %For C++ keywords
+\newcommand{\Python}[1]{\lstinline[language=Python]{#1}} %For Python keywords
 %———————————————————————————————————————————————————————————————————————————————
 
 %———————————————————————————————Declaring our font——————————————————————————————
