@@ -1,5 +1,5 @@
 
-%—————————————————————————————Standardized Imports——————————————————————————————
+%â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”Standardized Importsâ€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 \RequirePackage[utf8]{inputenc}
 
 %----------------------------Packages for math stuff----------------------------
@@ -17,6 +17,38 @@
 %------------------------Packages for Images and Diagrams-----------------------
 \RequirePackage{tikz} % Diagrams
 \RequirePackage{graphicx} % Images
+\RequirePackage{float} % Image Positioning
+
+%---------------------------Packages for Code Snippets--------------------------
+\RequirePackage[linesnumbered]{algorithm2e}
+\RequirePackage{listings}
+
+%-------------------------------Color Definitions-------------------------------
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+%------------------------Defining the Code Listing Style------------------------
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false, 
+    showstringspaces=false,
+    showtabs=false,          
+    tabsize=4
+}
+\lstset{style=mystyle}
 %-------------------------------------------------------------------------------
 
 \RequirePackage{calligra} %For the font
@@ -24,22 +56,22 @@
 \RequirePackage[inline]{enumitem} %For customizable numbered lists
 
 \RequirePackage{hyperref} % For hyperlinks
-%———————————————————————————————————————————————————————————————————————————————
+%â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 
-%—————————————————————————————Setting Up Hyperlinks—————————————————————————————
+%â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”Setting Up Hyperlinksâ€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 \hypersetup{
 	colorlinks=true,
 	linkcolor=blue,
 }
-%———————————————————————————————————————————————————————————————————————————————
+%â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 
-%——————————————————————————Setting Up The Page Margins——————————————————————————
+%â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”Setting Up The Page Marginsâ€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 \geometry{
 	bottom=2cm,
 }
-%———————————————————————————————————————————————————————————————————————————————
+%â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 
-%————————————————Defining the Theorem and Definition environments———————————————
+%â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”Defining the Theorem and Definition environmentsâ€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 \newcounter{theorem}[chapter]
 \newcounter{definition}[chapter]
 
@@ -88,26 +120,36 @@
 			\bfseries Lemma~\thechapter.\thetheorem~(#1).\normalfont
 	}
 }{\end{mdframed}}
-%———————————————————————————————————————————————————————————————————————————————
+%â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
+%               Code Snippet Environments
+%\newenvironment{java}{\begin{lstlisting}[language=Java]}{\end{lstlisting}}
+%\newenvironment{cpp}{\begin{lstlisting}[language=C++]}{\end{lstlisting}}
+%\newenvironment{python}{\begin{lstlisting}[language=Python]}{\end{lstlisting}}
 
-%——————————————Definitions of short commands to promote less typing—————————————
+%â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”Definitions of short commands to promote less typingâ€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 \newcommand{\R}{\mathbb{R}} %The reals
 \newcommand{\Q}{\mathbb{Q}} %The rationals
 \newcommand{\Z}{\mathbb{Z}} %The integers
 \newcommand{\N}{\mathbb{N}} %The natural numbers
 \newcommand{\F}{\mathbb{F}} %Any arbitrary field
 
+\newcommand{\e}{\epsilon} %For epsilon-delta proofs
+
 \renewcommand{\L}{\mathcal{L}} %For the Laplace Transform
 
 \newcommand{\ang}[1]{\langle #1 \rangle}
 
 \newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}} %pd is short for ``partial derivative".
-%———————————————————————————————————————————————————————————————————————————————
 
-%———————————————————————————————Declaring our font——————————————————————————————
+\newcommand{\Java}[1]{\lstinline[language=Java]{#1}} %For Java keywords
+\newcommand{\CPP}[1]{\lstinline[language=C++]{#1}} %For C++ keywords
+\newcommand{\Python}[1]{\lstinline[language=Python]{#1}} %For Python keywords
+%â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
+
+%â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”Declaring our fontâ€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 \DeclareFontShape{T1}{calligra}{m}{n}{<->s*[2.2]callig15}{}
 \DeclareMathAlphabet{\mathcalligra}{T1}{calligra}{m}{n}
-%———————————————————————————————————————————————————————————————————————————————
+%â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 
 \setlength{\parindent}{0pt} % To prevent unnecessary indentation
 
