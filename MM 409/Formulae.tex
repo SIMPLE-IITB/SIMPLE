@@ -1,0 +1,96 @@
+\documentclass[12pt,a4paper,twocolumn]{article}
+\usepackage{xparse}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{calligra}
+\usepackage{asymptote}
+\usepackage[version=4]{mhchem}
+\usepackage{titlesec}
+\setcounter{secnumdepth}{4}
+\titleformat{\section}[block]{\sffamily\large\filcenter\bfseries}{\thesection.}{0.25cm}{\Large}
+\titleformat{\subsection}[block]{\small\bfseries\sffamily}{\thesubsection.}{0.2cm}{\large}
+\titleformat{\subsubsection}[block]{\small\sffamily}{\thesubsubsection}{0.18cm}{\large}
+
+
+\usepackage{enumitem}
+
+\newcommand{\scriptr}{\mathcalligra{r}\,}
+\newcommand{\boldscriptr}{\pmb{\mathcalligra{r}}\,}
+\usepackage{physics}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usepackage[a4paper]{geometry}
+\usepackage{hyperref}
+\author{\sffamily{\color{blue}{Advait Risbud}}}
+\date{May 21'}
+\title{\sffamily{MM 409: Colloids and Interface Science}}
+\begin{document}
+	\sffamily
+	\maketitle
+	\pagebreak
+	\paragraph*{Specific Surface area of powders}
+	\begin{equation}
+	\boxed{	A_{sp}=\dfrac{3}{\rho R_s} }
+	\end{equation}
+Where $R_s$ is the radius of the equivalent sphere and $\rho$ is the density. 
+\paragraph*{Laplace's Equation}
+\begin{equation}
+	\laplacian{\phi}=\pdv[2]{\phi}{x}+\pdv[2]{\phi}{y}+\pdv[2]{\phi}{z}=\dfrac{-\rho_e}{\epsilon_r\epsilon_0}
+\end{equation}
+The permittivity can change locally.
+
+\paragraph*{Boltzmann distribution of ion concentration}
+\begin{equation}
+	\boxed{C_i=C_i^0 e^{\frac{-w_i}{k_BT}}}
+\end{equation}
+Where the $C_i$ denotes the concentration of the $i^{th}$ ion and $C_i^0$ is the concentration at the surface of the particle. $w_i$ denotes the work required to bring an ion in solution from infinity to a position closer to the surface. 
+
+\paragraph*{Poisson-Boltzmann Equation in 1-D:}
+\begin{align}
+\pdv[2]{\phi}{x}&=\dfrac{C_0 Ze}{\epsilon_r \epsilon_0}\Bigg(e^{\dfrac{Ze\phi}{k_B T}}-e^{\dfrac{-Ze\phi}{k_B T}}\Bigg) \\
+\pdv[2]{\phi}{x}&=\Bigg(\dfrac{2C_0 Ze^2}{\epsilon_0\epsilon_r k_B T}\Bigg)\phi \qq{for $\abs{e\phi}<<k_BT$}
+\end{align}
+
+\paragraph*{General Solution to P-B equation:}
+\begin{align}
+	\phi(x)&=C_1e^{\kappa x}+C_2e^{-\kappa x} \\
+	\implies \phi(x)&=\phi_0 e^{-\kappa x}
+\end{align}
+where,
+\begin{equation}
+	\boxed{\kappa=\sqrt{\dfrac{2C_0 Ze^2}{\epsilon_r\epsilon_0 k_B T}}.}
+\end{equation}
+So the potential decays faster for electrolytes of higher charge($Z$) and concentration($C_0$) at the surface. 
+
+\paragraph*{Debye Length}
+\begin{equation}
+	\lambda_D=\frac{1}{\kappa}
+\end{equation}
+Potential at the Debye length is,
+\begin{equation*}
+	\phi(\lambda_D)=\frac{\phi_0}{e}\approx \frac{\phi_0}{2.72}
+\end{equation*}
+
+\paragraph*{P-B equation in non-linearised case:}
+$$\pdv[2]{\phi}{x}=\dfrac{C_0 Ze}{\epsilon_r \epsilon_0}\Bigg(e^{\dfrac{e\phi}{k_B T}}-e^{\dfrac{-e\phi}{k_B T}}\Bigg)$$
+Let $y=\frac{Ze\phi}{k_B T}$,
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,97 @@
+\documentclass[12pt]{article}
+\usepackage{xparse}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{calligra}
+\usepackage{asymptote}
+\usepackage[version=4]{mhchem}
+\usepackage{titlesec}
+\setcounter{secnumdepth}{4}
+
+
+
+\usepackage{enumitem}
+
+\newcommand{\scriptr}{\mathcalligra{r}\,}
+\newcommand{\boldscriptr}{\pmb{\mathcalligra{r}}\,}
+\usepackage{physics}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usepackage[a4paper]{geometry}
+\usepackage{hyperref}
+\title{MM 217 Formulae}
+\author{{\color{blue}Advait Risbud}}
+\date{May 21'}
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\pagebreak
+	\section{Descriptive Statistics}
+	\subsection{Measures of central tendency}
+	\paragraph*{Mean} If $ x_1, x_2, x_3,\cdots x_n $ are data points then the mean is given by
+	\begin{equation}
+		\bar{x}=\dfrac{\sum_{i=1}^{n}x_i}{n}
+	\end{equation}
+	R Command: {\ttfamily mean(data)}
+	\paragraph*{Median} It is the value which divides the data in half. Let n denote the number of data points then if 
+	\begin{itemize}
+		\item n=even, then 
+		\begin{equation}
+			\tilde{x}=x_{\frac{n}{2}}+x_{\frac{n+2}{2}}
+		\end{equation}
+	
+	    \item n=odd, the
+	    \begin{equation}
+	    	\tilde{x}=x_{\frac{n+1}{2}}
+	    \end{equation}
+	R command: {\ttfamily median(data)}
+	\end{itemize}
+	\paragraph*{Mode} Data point with the highest frequency. \\
+	R command: {\ttfamily mode(data)}
+	
+	\paragraph*{Variance}
+	Variance is $ \sigma^2 $ and standard deviation is $\sigma$.
+	\begin{equation}
+		\sigma^2=\dfrac{\sum_{i=1}^{n}(x_i-\bar{x})^2}{n-1}
+	\end{equation}
+	Between one sigma limits of a normal distribution 67\% of the data is contained. \\
+	R command: {\ttfamily sd(data)}
+	\subsection{Graphical Methods}
+	Empty for now, will add post midsems.
+	\subsection{Correlation Coefficient}
+	Consider two data sets $ \{x_1,\cdots,x_n \}$ and $ \{y_1,\cdots, y_n \}$. Covariance and correlation coefficient are defined as,
+	\begin{align}
+		Cov(x,y)&=\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})\times \frac{1}{n-1}\\
+		Corr(x,y)&=\dfrac{Cov(x,y)}{\sqrt{Var(x)Var(y)}}
+	\end{align}
+	\begin{itemize}
+		\item $ -1\leq Corr(x,y)\leq 1 $
+		\item $Corr(x,y)=1  \implies $ perfect linear relationship with positive slope.
+		\item $Corr(x,y)=-1  \implies $ perfect linear relationship with negative slope.
+		\item Intermediate values indicate different extent of linearity in the two variables.
+	\end{itemize}
+R command: {\ttfamily cov(x,y)} and {\ttfamily cor(x,y)}.
+
+    \section{Probability}
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+\end{document}

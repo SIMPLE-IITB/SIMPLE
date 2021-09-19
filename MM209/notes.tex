@@ -127,6 +127,12 @@
     
     A reversible process must not have hysteresis. Hysteresis means that the process should follow the same path on being reversed. An example of a reversible process is loading and unloading of a rod when stress is applied below the yield stress. When applied stress is more than the yield stress then plastic deformation takes and when the rod is unloaded it will follow a path parallel to the loading curve. Hence showing hysteresis and so is not a reversible process. \\
     \pagebreak
+    
+\section{Pure Substances}
+    \subsection{What is a pure substance?}
+    A substance that has a fixed chemical composition throughout is called a pure substance. Pure elements and compounds are obviously included, even a mixture of elements or compounds is permitted so long as it is homogenous. A mixture of oil and water is not a pure substance as it is not homogenous. A substance can be composed of multiple phases but still be pure provided the compositions of the phases are the same for e.g. liquid air and gaseous air are different phases but will have a different composition due to the varying boiling points of gases in air.\\
+    
+    A liquid that is not about to vaporise is called a \textbf{sub-cooled liquid} or a \textbf{compressed liquid}. A liquid that is about to vaporise is called a \textbf{saturated liquid}.
 \section{Equilibrium}
     In an isolated system there will be no external influences on a system but on an atomistic scale there can still be fluctuation in properties. When all such fluctuations cease the system is said to be at equilibrium, to be specific macroscopic equilibrium. There are 4 main types of equilibrium: stable, neutral, unstable and metastable. Metastable equilibrium means that the system will return to the original state for small generalised displacements but for larger displacements it will become unstable. The figure below illustrates the same graphically \\
     
@@ -498,7 +504,7 @@ Questions left unanswered by the first law:
 \end{enumerate}
 
 \section{Second Law of Thermodynamics}
- Also called the "law of degradation of energy". If a system is left to itself it will do one of two things (i)remain in the same state or (ii)move of its own accord to some other state. The second process is termed  spontaneous because the process starts without external influence and moves towards equilibrium so there is a definite direction. All natural processes are spontaneous and irreversible.\\
+ Also called the "law of degradation of energy". Consider a cup with hot coffee in it, it is intuitive that the cup will cool with time. However we do not expect the cup to get hotter whilst cooling the surrounding. The energy converts from an organised form to a more disorganised form. If a system is left to itself it will do one of two things (i)remain in the same state or (ii)move of its own accord to some other state. The second process is termed  spontaneous because the process starts without external influence and moves towards equilibrium so there is a definite direction. All natural processes are spontaneous and irreversible.\\
 
 \begin{center}
 	{\color{red}"A process which involves the spontaneous movement of a system from non-equilibrium state to an equilibrium state is called a natural/spontaneous/real process".}
@@ -606,20 +612,266 @@ This formulation does not involve cycles and heat engined and takes a mathematic
 \begin{tcolorbox}[title=Caratheodary's Theorem]
 	If a Pfaffian expression has the property for which, in the neighbourhood of any point P, there are points that cannot be connected to P along curves that satisfy the equation $dL=0$, then the Pfaffian expression has an integrating factor.
 \end{tcolorbox}
-So an inexact differential that follows the condition $dL=0$ can be made exact via an integrating factor. Caratheodary showed that $\delta q=\sum x_i dx_i$ can be made exact using an integrating factor. This means that \textit{in the neighbourhood of every equilibrium thermodynamic state, there exist states unattainable from it by any adiabatic process(reversible or irreversible)}. 
+So an inexact differential that follows the condition $dL=0$ can be made exact via an integrating factor. Caratheodary showed that $\delta q=\sum x_i dx_i$ can be made exact using an integrating factor. This means that \textit{in the neighbourhood of every equilibrium thermodynamic state, there exist states unattainable from it by any adiabatic process(reversible or irreversible)}. So a state function has a tendency to increase. \\
 
+Reasoning behind Caratheodary's theorem:\\
+\subsection{Existence of an integrating factor:}\label{caratheo1}
+$$dU=\delta q+PdV$$ Let $U=f(T,V)$,
+\begin{align*}
+	 \delta q&=\Bigg[\underbrace{\Bigg(\pdv{U}{V}\Bigg)_T}_{=0}+P\Bigg]dV+\Bigg(\pdv{U}{T}\Bigg)_VdT \\
+	 \delta q=\frac{RT}{V}dV+\Bigg(\pdv{U}{T}\Bigg)_VdT \\
+\end{align*}
+we can see that $\delta q$ is not an exact differential. Whereas, if we divide by T then the equation becomes exact. Hence for an ideal gas($\pdv{U}{V}$=0) $\frac{1}{T}$ is an integrating factor. 
+\begin{align}
+	\dfrac{\delta q}{T}&=\frac{R}{V}dV+\frac{1}{T}\Bigg(\pdv{U}{T}\Bigg)_VdT\\
+	\dfrac{\delta q}{T}&=dS\\
+	\implies \frac{1}{T}&\to \text{Integrating Factor}
+\end{align}
+Caratheodary showed that for complex systems as well $1/T$ is an integrating factor. Therefore $\frac{\delta q_\text{rev}}{T}$ is an exact differential or all systems.
 
+\subsection{In the vicinity of an eqb. state there exist states unattainable by an adiabatic process} \label{Caratheo2}
+Consider a system having two independent variables $\theta$ and $x_1$. By the Duhem postulate we can define the state of the system using these two variables. 
 
+\begin{figure}[h]
+	\includegraphics[scale=0.6]{caratheodary1.jpg}
+	\centering
+	
+\end{figure}
+We need to show that there are states unattainable from the state $\theta_1$ to $\theta_2$ by a reversible/irreversible adiabatic process. So consider the path $1\to 2'\to 1'\to 1$ as shown below. In this cycle heat is absorbed only along $1'\to 1$ as all other processes are reversible adiabatic. Since it is a cyclic process the internal energy change is zero therefore all the heat absorbed must be converted to work which is highly improbable. Similarly we can consider any path say for e.g. $1\to 2_a\to 1_a\to 1 $. Here the heat is evolved along $1_a\to 1$ and so all the work done is liberated as heat. This is not forbidden by the laws of thermodynamics. Therefore any point to the right of \textbf{1} are accessible by a reversible/irreversible \textbf{adiabatic} process. \\
 
+\begin{figure}[h]
+	\includegraphics[scale=0.6]{caratheodary2..jpg}
+	\centering
+\end{figure}
 
+We can still access points to the left of state \textbf{1} but not by an adiabatic process. We can go from $1\to 2_a$ by $1\to 1_a \to 2_a$ where the heat is absorbed hence the state function(entropy) is increasing since $dS=\int dQ/T$. If we consider the reverse process i.e. $2_a\to 1$ via $2_a\to 1_a\to 1$ then the heat will be evolved(consequence of the sign convention) making entropy change negative. It follows that the first process is feasible but the second isn't as \textbf{1} is to the left of $2_a$.
 
+\subsection{State function must increase for a spontaneous adiabatic process and remain constant for a reversible one} \label{caratheo3}
 
+This entire formulation is a consequence of $\delta q=\sum X_i dx_i$ being an exact differential upon dividing by $T$. Since $dS=0$ is an exact differential the integral curves will be of the form 
+\begin{equation}
+	S_k(x_1,x_2,\cdots x_n)=C_k, \qq{where $C_k$ is a constant with $k\in \{1, 2, 3,\cdots n\}$}
+\end{equation} 
+with each of the solutions being isentropic surfaces(entropy is a state function). There will therefore be no reversible adiabatic process that can allow a system to go from the surface $S_i$ to $S_j$ as that process won't be isentropic and hence not adiabatic reversible. However we can go between two isentropic states by an irreversible process however it will only be favourable for $i \to j$ such that $S_j>S_i$. Therefore our state function(entropy) must increase for a spontaneous adiabatic process, but remain constant for reversible adiabatic ones. So there is a natural or thermodynamic sense of direction for adiabatic processes. \\
 
+Consider a series of heat reservoirs connected by diathermic walls and the entire set up with an adiabatic boundary. Heat will be transferred between the reservoirs such that the net entropy change is zero. 
 
+\begin{figure}[h]
+	\includegraphics[scale=0.8]{caratheodary3.jpg}
+	\centering
+\end{figure}
 
+So net change in entropy will be given by
 
+\begin{align*}
+	\Delta S_1&=\dfrac{q_1}{T_1}\\
+	\Delta S_2&=\dfrac{q_2}{T_2}\\
+	\Delta S_{net}&=q_1\Bigg(\dfrac{1}{T_1}-\dfrac{1}{T_2}\Bigg)\\
+	\implies \Delta S_{\text{process}}&>0
+\end{align*}
+So if the entropy change is positive then the process will be spontaneous and natural. To summarise Caratheodary's formulation, 
+\begin{enumerate}
+	\item There are states around an equilibrium state to which adiabatic paths are not possible. How do we know this? From section \ref{Caratheo2}.
+	\item In such cases an integrating factor exists for the Pfaffian expression. How do we know this? From section \ref{caratheo1}.
+	\item The exact differential we get after multiplying by the integrating factor is $dS$ and its solution function has  a tendency to increase when undergoing an irreversible adiabatic process. How do we know this? From section \ref{caratheo1}, \ref{Caratheo2} and \ref{caratheo3}.
+\end{enumerate}
 
+\section{Heat Engines and Refrigerators}
+\subsection{Conversion of work to heat}
+Consider rubbing two stones, the work done in rubbing results in a rise in temperature of the stones. If this setup is underwater then the work done will be transferred to the water as heat and the temperature of the water will increase. Similarly if we place a resistor under water and a pass a current through it then in an ideal scenario the temperature of the water will rise with no change in the thermodynamic state of the resistor. Since there is no change in state of the thermodynamic system(stones or resistor) the change in internal energy is zero therefore $w=Q$. In the case of conversion of work to heat there is no change in the state of the system therefore the process can be repeated indefinitely.\\
 
+Consider the isothermal expansion of an ideal gas. The work done by the gas is equal to the heat absorbed. However, in this case the state of the system changes as the gas expands and changing $P$ and $V$. Thus it cannot be done indefinitely. So if we want to do such a process indefinitely then we need to perform a series of steps. This concept is used in a heat engine. 
+
+\subsubsection{Heat Engine}
+\begin{figure}
+	\includegraphics{heatengine.jpg}
+	\centering
+\end{figure}
+The system receives heat $Q_H$ from a high temperature reservoir and rejects $Q_L$ heat to a lower temperature reservoir whilst doing work $W$ on it's surroundings. The efficiency of this process is given by
+\begin{equation}
+	\eta=\dfrac{\text{Work Done(W)}}{\text{Heat Input}(Q_H)}
+\end{equation}
+From FLOT, $$Q_H-Q_L=W.$$
+No heat engine has been developed that converts all the heat extracted from a high temperature reservoir to work without rejecting any heat to a low temperature reservoir. 
+The statements of Kelvin and Planck can be combined to give the combined Kelvin-Planck statement of the second law of thermodynamics.
+\begin{tcolorbox}[title=Kelvin-Planck Statement of the Second Law]
+	It is impossible to construct an engine that, operating in a cycle, will produce no effect other than the extraction of heat from a reservoir and the performance of an equivalent amount of work.
+\end{tcolorbox}
+The above statements also implies that a perpetual motion machine can never be made.
+
+\subsubsection{Refrigeration Cycle}
+\begin{figure}[h]
+	\includegraphics[scale=0.8]{refrigeration.jpg}
+	\centering
+\end{figure}
+A machine that performs work in the opposite direction as a heat engine is called a refrigerator and the working substance(system) is called the refrigerant. The refrigerator takes in heat $Q_L$ from the low temperature reservoir after work $W$ is done on it, it rejects heat $Q_H$ to a high temperature reservoir. 
+$$Q_H=W+Q_L$$
+The work done is necessary to transfer the heat from the low temperature reservoir to a high temperature reservoir as it is not a spontaneous process. This gives us the Clausius statement of the second law.
+\begin{tcolorbox}[title=Clausius Statement of the Second Law]
+	It is impossible to construct a refrigerator that, operating in a cycle, will produce no effect other than the transfer of heat from a lower-temperature reservoir to a higher-temperature reservoir.
+\end{tcolorbox}
+Both statements for the second law are equivalent. We can prove this by showing that the negatives and positives of the statements are equivalent. 
+
+\subsubsection{Carnot's Cycle}
+\begin{tcolorbox}[title=Carnot's Theorem]
+	No heat engine operating between two given reservoirs can be more efficient than a Carnot engine operating between the same two reservoirs.
+    \tcblower
+    Corollary: All Carnot engines operating between the same two reservoirs have the same efficiency.
+\end{tcolorbox}
+A Carnot cycle is a set of processes that can be performed by any thermodynamic system. Any engine performing a Carnot cycle is called a Carnot engine. The Carnot cycle has a system in thermal equilibrium with a reservoir at the low temperature T. This is advantageous as compared to the heat engine or refrigerator. The Carnot cycle has 4 processes, 2 adiabatic and 2 isothermal. Irrespective of the kind of system we choose, these 4 processes must be performed. 
+
+\begin{figure}[h]
+\includegraphics[scale=0.6]{carnot.jpg}
+\centering
+\end{figure}
+The Carnot engine rejects $Q_L$ heat to the low temperature reservoir and absorbs $Q_H$ heat from the high temperature reservoir. If we reverse the path of the cycle i.e. if we reject heat to the high temperature reservoir and take up heat from the low temperature reservoir then we get Carnot's refrigeration cycle. The efficiency of the engine depends only on the reservoirs between which the engine operates and is completely independent of the working material. \\
+
+The Carnot cycle is reversible, has only two reservoirs, absorbs heat at $T_H$ and rejects heat it at $T_L$ and its efficiency is independent of the system.
+\begin{equation}
+	\eta_R=1-\frac{Q_H}{Q_L}
+\end{equation}
+So we can say that the efficiency of the Carnot cycle is given as 
+$$\eta=\frac{Q_1}{Q_2}=f(T_1,T_2)$$
+it can be proved that 
+\begin{equation}
+	\eta_{\text{Carnot}}=1-\dfrac{Q_L}{Q_H}=1-\dfrac{T_L}{T_H}
+\end{equation}
+If we calculate the entropy change of the system used in the heat engine,
+\begin{align*}
+	\Delta S&=\frac{Q_H}{T_H}-\frac{Q_L}{T_L}\\
+	\Delta S&=0.
+\end{align*}
+Therefore for an ideal heat engine the entropy change of the system is zero. Note also that cycle only consists of reversible reactions. 
+\\
+
+So the efficiency is the ratio of the absolute temperatures of the two reservoirs therefore the Carnot engine can be used to define the absolute temperature scale. We can set up the adiabatic conditions and measure the heat exchanged in the isothermal processes. The ratio of which will give the ratio of temperatures. Let us take the reference temperature of 273.16 K as the triple point of water($T_{TP}$). So if we set up a Carnot cycle between $T_{TP}$ and some unknown temperature T then the temperature $T$ can be determined as
+\begin{equation}
+	T=273.16\times \frac{Q_T}{Q_{TP}}K
+\end{equation}
+One can see that in this scale the heat exchanged by the reservoir in the isothermal process is the thermometric property. If the heat exchanged by the reservoir in a reversible process is zero then the reservoir is at absolute zero temperature. This goes to show that absolute zero is independent of the system. Therefore only when $T_L=0$ the efficiency will be 1. 
+
+\section{Clausius's Inequality}
+Consider the process $i \to f$ shown below. The path is isothermal and let's denote the work done by $W_{i\to f}$. Take two points a and b on adiabatic curves such that the work done in the process $i\to f$ is the same as that in $i\to a\to b\to f$. We see that,
+
+\begin{figure}
+	\includegraphics[scale=0.6]{clausius.jpg}
+	\centering
+\end{figure}
+
+\begin{align*}
+	W_{if}&=W_{iabf}\\
+	Q_{if}&=Q_{iabf}=Q_{ab} \text{since i$\to$ a and b$\to$ f are adiabatic.}
+\end{align*}
+Now consider a cyclic process as shown below. 
+\begin{figure}[h]
+	\includegraphics[scale=0.6]{clausius2.jpg}
+	\centering
+\end{figure}
+Here in the process a$\to$ b the heat exchanged $Q_1$ is negative of that in process c $\to$ d. Between any two adjacent adiabatic curves we can find two such paths.The entire cyclic process can be described by the zig-zag path shown. So the total entropy over the entire cyclic process will be zero.
+\begin{equation}
+	\oint_R \dfrac{dQ}{T}=0
+\end{equation}
+This is the first part of the Clausius statement of the second law and concerns only reversible processes as all the zig-zag lines along with the adiabatic lines make up a Carnot cycle. For an irreversible process we get $$\oint_I \dfrac{dQ_I}{T}<0.$$
+We can combine the two statements of Clausius into one inequality,
+\begin{tcolorbox}[title=Clausius's Inequality]
+	\begin{equation}
+	\oint \dfrac{dQ}{T}\leq 0
+	\end{equation} 
+\end{tcolorbox}
+Consider going between two states one way by a reversible process amd returning by an irreversible process. The net entropy change must be zero as entropy is a state function. 
+\begin{align*}
+	\int_{f}^{i}dS_I&+\int_{i}^{f}dS_R=0\\
+    \oint \dfrac{dQ}{T}&=\int_{f}^{i}\dfrac{dQ_I}{T}+\int_{i}^{f}	\dfrac{dQ_R}{T}<0 \\
+\text{Subtracting the two equation above we get,} \\
+\int_{f}^{i}dS_I&>{I}\int_{f}^{i}\dfrac{dQ}{T}\\
+\implies dS\geq \dfrac{dQ}{T}
+\end{align*}
+Entropy of the universe always increases i.e. 
+\begin{equation}
+	\Delta S_{\text{universe}}\geq 0
+\end{equation}
+where the equality represents a reversible process and inequality represents an irreversible process. The heat transferred during a reversible process can be calculated as 
+\begin{equation*}
+dQ_R=\int_{i}^{f}TdS
+\end{equation*}
+We can make a T-S diagram for processes. The diagram for a Carnot cycle is given below
+\begin{figure}[h]
+	\includegraphics[scale=0.6]{clausius3.jpg}
+	\centering
+\end{figure}
+
+\section{Entropy Calculations}
+
+\subsection{Dependence of entropy on temperature}
+\begin{equation}
+	\boxed{\Delta S_v=S_2-S_1=\int_{T_1}^{T_2}C_v d(\ln T)}\qq{at constant volume.}
+\end{equation}
+\begin{equation}
+	\boxed{\Delta S_p=S_2-S_1=\int_{T_1}^{T_2}C_p d(\ln T)}\qq{at constant pressure.}
+\end{equation}
+\subsection{Dependence of entropy on volume}
+\begin{equation}
+	dS=\frac{1}{T}\Bigg(\pdv{U}{T}\Bigg)_VdT+\Bigg(\pdv{P}{T}\Bigg)_V dV.
+\end{equation}
+Under isothermal conditions we will get
+\begin{equation}
+	dS_T=\Bigg(\pdv{P}{T}\Bigg)_VdV
+\end{equation}
+From the reciprocity relation we get,
+\begin{equation}
+	\boxed{dS_T=\frac{\alpha}{\beta}dV}
+\end{equation}
+
+\subsection{Dependence of entropy on pressure}
+\begin{equation}
+		dS=\frac{1}{T}\Bigg(\pdv{H}{T}\Bigg)_PdT+\Bigg(\pdv{V}{T}\Bigg)_P dP.
+\end{equation}
+
+\begin{equation}
+	\boxed{dS_T=-\alpha VdP}
+\end{equation}
+
+\subsection{Relation between $C_p$ \& $C_v$ 2.0}
+\begin{equation}
+	\boxed{C_p-C_v=\dfrac{\alpha^2 VT}{\beta}}
+\end{equation}
+Analogues of Hess's law and Kirchoff's law are applicable for entropy as well. The only differences being that exact value of entropy can be determined and entropy is only calculated in a reversible process(since entropy is a state function).
+
+\subsection{Entropy change in phase transformations}
+\begin{equation}
+	\Delta S_{tr}^{0}=\dfrac{\Delta H_{tr}^{0}}{T_{tr}}
+\end{equation}
+
+\begin{tcolorbox}[title=Example]
+	\ce{A_{(s)}(298 K) -> A_{(l)}(T_mK) -> A_{g}(TK)}
+	\tcblower
+	\begin{equation*}
+		S_{T}^{0}-S_{298}^{0}=\int_{298}^{T_m}\frac{C_p\text{(solid)}}{T}dT + \frac{\Delta H_m}{T_m} + \int_{T_m}^{T_b}\frac{C_p(\text{(liq.)}}{T}dT + \frac{\Delta H_b}{T_b} + \int_{T_b}^{T}\frac{C_p\text{(gas)}}{T}dT
+	\end{equation*}
+\end{tcolorbox}
+
+\section{Thermodynamic Potentials}
+\begin{align*}
+	dS&=\frac{dQ_{rev}}{T} \\
+   dU&=dQ-PdV\\
+   dU&=TdS-PdV\\
+   TdS&=dU+PdV\\
+\end{align*}
+So we can say that for a spontaneous process
+\begin{align}
+	TdS&>dU+PdV\\
+	&\qq{and for an unnatural process} \\
+	TdS&<dU+PdV.
+\end{align}
+If the system moves from one state to the other then there must be some driving force for the process to take place and is called the thermodynamic potential. For e.g. if gas is effusing due to a higher pressure one side then the mechanical potential is at play. In case of an electric field a charge moves from higher to lower potential. So in general a system moves from higher to lower potential. Enthalpy, internal energy and entropy are thermodynamic potentials. If a system goes from higher $S$ to a lower $S$ then we will say that the process is entropy driven. Same goes for any thermodynamic potential. 
+\paragraph*{Examples}
+\begin{enumerate}
+	\item \ce{C(s) + O2(g) -> CO2(g)} \quad: $\Delta H_{298}=-94050$ cal/mol. So this process is enthalpy driven, so can we conclude that the fate of each system can be determined by enthalpy?
+	\item \ce{ZnO(s) + C(s) -> Zn(g)+CO(g)} \quad: $\Delta H_{1373}=83200$ cal/mol but $ \Delta S=1371 $ cal/mol*degree. This reaction is non spontaneous below the melting point of zinc but after the melting point it is entropy driven. So is entropy a sufficient condition for determining the spontaneity of a process? 
+	\item \ce{Fe(s) +1/2 O2(g) -> FeO(s)}\quad: $\Delta S=-17$ cal/deg  however iron oxidises spontaneously. 
+	
+\end{enumerate}
+We can conclude that the spontaneity of a process depends on the \textit{quantity} and \textit{quality} of the energy in the system and how the two change.
 
 
 
